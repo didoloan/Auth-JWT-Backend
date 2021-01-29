@@ -67,5 +67,5 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTE4ODM3MzQsImV4cCI6MTYxMTg4NzMzNCwiYXVkIjoiNjAxMzU5YThhNDFhODQyZjQ1MzljM2E1IiwiaXNzIjoid2Vibm93bmcuY29tIn0.P3gccbARvhMjVDRff1izgVDD3g378lAcMBM5tfCTl64
 
 {
-    "interests":["Coding", "Reading", "Electronics"]
+    "hobbies":["Coding", "Reading", "Electronics"]
 }
