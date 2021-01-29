@@ -1,0 +1,71 @@
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "email":"didoloan@gmail.com",
+    "fname":"Adedoyin",
+    "lname":"Awosanya",
+    "password":"didoloan123",
+    "dob":"1995-01-03"
+}
+
+
+
+### Login Route
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email":"didoloan@gmail.com",
+    "password":"Fucking2019"
+}
+
+### Refresh token
+POST http://localhost:3000/auth/refresh
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTE4ODEyMTUsImV4cCI6MTY0MzQzODgxNSwiYXVkIjoiNjAxMzU5YThhNDFhODQyZjQ1MzljM2E1IiwiaXNzIjoid2Vibm93bmcuY29tIn0.jobYEXOZtIcJJ8LGpAKWzp2A-uUucde30nEGMFgsNt4"
+}
+
+### Forgot Password Link
+POST http://localhost:3000/auth/forgot
+Content-Type: application/json
+
+{
+    "email":"didoloan@gmail.com"
+}
+
+### Forgot Password Link
+POST http://localhost:3000/auth/reset
+Content-Type: application/json
+
+{
+  "id": "601359a8a41a842f4539c3a5",
+  "key": "8519f2d563e6b3b7b15ab48b025c62b23629c695204c597c13c19b906e2ddf08",
+  "password": "Fucking2019"
+}
+
+
+### Get User info
+GET http://localhost:3000/user/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTE4ODM3MzQsImV4cCI6MTYxMTg4NzMzNCwiYXVkIjoiNjAxMzU5YThhNDFhODQyZjQ1MzljM2E1IiwiaXNzIjoid2Vibm93bmcuY29tIn0.P3gccbARvhMjVDRff1izgVDD3g378lAcMBM5tfCTl64
+
+### Add Interest
+POST http://localhost:3000/user/interests
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTE4ODM3MzQsImV4cCI6MTYxMTg4NzMzNCwiYXVkIjoiNjAxMzU5YThhNDFhODQyZjQ1MzljM2E1IiwiaXNzIjoid2Vibm93bmcuY29tIn0.P3gccbARvhMjVDRff1izgVDD3g378lAcMBM5tfCTl64
+
+{
+    "interests":["MMA", "Boxing"]
+}
+
+### Add Hobbies
+POST http://localhost:3000/user/hobbies
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTE4ODM3MzQsImV4cCI6MTYxMTg4NzMzNCwiYXVkIjoiNjAxMzU5YThhNDFhODQyZjQ1MzljM2E1IiwiaXNzIjoid2Vibm93bmcuY29tIn0.P3gccbARvhMjVDRff1izgVDD3g378lAcMBM5tfCTl64
+
+{
+    "interests":["Coding", "Reading", "Electronics"]
+}
