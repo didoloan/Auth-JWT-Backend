@@ -6,7 +6,7 @@ const router = Router();
 router.get('/', getUser)
 
 router.route('/interests')
-    .post(addInterest);
+    .patch(addInterest);
 
 router.post('/hobbies', addHobbies)
 
