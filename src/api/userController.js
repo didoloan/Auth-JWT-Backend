@@ -28,6 +28,19 @@ module.exports = {
             next(error)
         }
     },
+    deleteInterest: async(req, res, next) => {
+        if (!req.headers['authorization']) return next(createError.Unauthorized())
+        const token = req.headers['authorization'].split(' ')[1];
+        try {
+            const payload = await verifyToken(token);
+            const user = await User.findById(payload.aud).select({password:0});
+            user.interests = user.interests.filter((interest,index) => index!=req.body.index);
+            await user.save();
+            res.json({message:'Interest deleted successfully!'});
+        } catch (error) {
+            next(error)
+        }
+    },
     addHobbies: async(req, res, next) => {
         if (!req.headers['authorization']) return next(createError.Unauthorized())
         const token = req.headers['authorization'].split(' ')[1];
