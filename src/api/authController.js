@@ -49,7 +49,7 @@ module.exports = {
           const { refreshToken } = req.body;
           if (!refreshToken) throw createError.BadRequest()
           const userId = await verifyRefreshToken(refreshToken)
-    
+          console.log({user:userId});
           const accessToken = await signAccessToken(userId)
           const refToken = await signRefreshToken(userId)
           res.send({ accessToken: accessToken, refreshToken: refToken })
