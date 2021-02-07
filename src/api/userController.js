@@ -5,6 +5,7 @@ const { verifyToken } = require('../utils/jwt_helper')
 
 module.exports = {
     getUser: async(req, res, next) => {
+        console.log(req.headers.cookie);
         if (!req.headers['authorization']) return next(createError.Unauthorized())
         const token = req.headers['authorization'].split(' ')[1];
         try {
