@@ -42,6 +42,10 @@ userSchema.pre('save', async function(next){
     }
 })
 
+const newrating = (oldrating, ratingCount, newRating) => {
+    return (oldrating*count+newRating)/(count+1);
+}
+
 
 const User = mongoose.model('User', userSchema);
 

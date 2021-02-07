@@ -3,6 +3,7 @@ const compression = require('compression');
 const cors = require('cors');
 const morgan = require('morgan');
 const helmet = require('helmet')
+const cookieParser = require('cookie-parser');
 const createError = require('http-errors');
 const authRoute = require('./api/auth.route')
 const userRoute = require('./api/user.route');
@@ -14,6 +15,8 @@ const app = express()
 app.use(cors())
 
 app.use(helmet())
+
+app.use(cookieParser())
 
 app.use(express.json())
 
