@@ -36,7 +36,7 @@ module.exports = {
             let accessToken = await signAccessToken(user.id);
             let refreshToken = await signRefreshToken(user.id);
             res.cookie('reftoken', refreshToken, { maxAge: 86_400_000, httpOnly: true });
-            res.cookie('token', refreshToken, { maxAge: 300_000, httpOnly: true });
+            res.cookie('token', accessToken, { maxAge: 300_000, httpOnly: true });
             res.status(200).json({accessToken, refreshToken});
         } catch (error) {
             if(error.isJoi===true) next(createError.BadRequest('Invalid Request!'));
