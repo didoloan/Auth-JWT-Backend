@@ -13,7 +13,7 @@ require('./utils/init_redis');
 const app = express()
 
 app.use(cors({
-    origin:'http://localhost:3000',
+    origin:'https://peaceful-hermann-30e6c8.netlify.app',
     credentials:true
 }))
 
