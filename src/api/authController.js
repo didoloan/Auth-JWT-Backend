@@ -35,8 +35,8 @@ module.exports = {
             if(!isMatch) throw createError.Unauthorized('Invalid Username/Password!');
             let accessToken = await signAccessToken(user.id);
             let refreshToken = await signRefreshToken(user.id);
-            res.cookie('reftoken', refreshToken, { maxAge: 86_400_000, httpOnly: true, sameSite:'None' });
-            res.cookie('token', accessToken, { maxAge: 300_000, httpOnly: true, sameSite:'None' });
+            res.cookie('reftoken', refreshToken, { maxAge: 86_400_000, httpOnly: true, SameSite:'None' });
+            res.cookie('token', accessToken, { maxAge: 300_000, httpOnly: true, SameSite:'None' });
             res.status(200).json({accessToken, refreshToken});
         } catch (error) {
             if(error.isJoi===true) next(createError.BadRequest('Invalid Request!'));
